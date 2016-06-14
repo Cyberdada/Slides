@@ -1,0 +1,22 @@
+b, strong {
+ color:#eee8d5;	
+	
+}
+
+.reveal h1, .reveal h3 {
+	text-shadow: 3px 3px #111111;
+}
+
+.kirk 
+{
+	position:absolute;
+	top:80px;
+	left:540px;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 100%;
+  word-wrap: normal; }

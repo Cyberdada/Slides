@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">	
+<head>
+	<meta charset="utf-8">
+	<title>Angular 2 - What, Why How ? </title>
+	<meta name="author" content="Magnus Gudmundsson">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/moon.css" id="theme">	
+	<link rel="stylesheet" href="css/homegrown.css">
+
+	
+			<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/agate.css">
+	<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	
+	<!--Add support for earlier versions of Internet Explorer -->
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+ 
+<body>
+	<!-- Wrap the entire slide show in a div using the "reveal" class. -->
+	<div class="reveal">
+		<!-- Wrap all slides in a single "slides" class -->
+		<div class="slides">
+ 
+			<!-- ALL SLIDES GO HERE -->
+			<!-- Each section element contains an individual slide -->
+			<section>
+			 <img src="assets/angular2.png">
+				<h1>Angular 2</h1>
+				<p>Magnus Gudmundsson</p>		
+				<p>CyberDaDa</p>
+			</section>
+ 
+			<section id="thefuture">
+			    <img src="assets/thefuture.png">
+				<h1>The Future</h1>
+				<h2>Started yesterday</h2>
+				<p>And We Are Already Late</p>
+			</section>
+			
+			<section id="thePast">
+				<h1>The Past...</h1>
+			<h2>You may ask yourself, how did We get here?</h2>			</section>
+ 
+			<section data-background="assets/timeline.png">
+			</section>
+			
+				<section id="Why Angular">
+				<h1>Why Angular ?</h1>
+			    <h3>Building a modern front end can be hard</h3>
+				<h3>Angular is a framewwork to help us build client applications in HTML and JavaScript</h3>
+			</section>
+			<section id="why2">
+				<h3>With Angular you get </h3>
+				<ul>
+					<li>MVC done right</li>
+					<li>+ Easy data binding</li>
+					<li>+ Routing</li>
+					<li>+ Clientside filtering</li>
+					<li>+ A nice way to build your application</li>
+					<li>=== Less code to write</li>
+				</ul>
+				</section>
+				<section id="Why3">
+				<h1>Why #2 ?</h1>
+			    <p>
+					“A framework that cannot work with Web Components, bogs down on mobile or continues to push its own module and class API against the standards, is not going to last long."
+					</p>
+			</section>
+			<section>
+				
+<p>
+The Angular team's answer to these problems is a new version: Angular 2.0. 
+</p>
+<p>
+Angular 2 is essentially a re-imagining of AngularJS for the modern web, taking into account everything that has been learned over the last five years.”
+</p>
+<a href="http://eisenbergeffect.bluespire.com/all-about-angular-2-0/">http://eisenbergeffect.bluespire.com/all-about-angular-2-0/</a>
+			</section>
+
+<section>
+	<h3>How soon is now?</h3>
+	</section>
+	<section id="goals">
+		<h1>Goals</h1>
+		<p>The <strong>Fastest</strong> JS framework available --> Benchpress</p>
+		<p><strong>Fast</strong> and <strong>Smooth</strong>--> Webworkers</p>
+		<p><strong>Mobile first</strong> Possibilities to build separate renderers for IOS/Android etc. </p>
+		<p><strong>Simpler</strong> syntax </p>
+		
+		</section>
+		<section id="more goals">
+			<h1>More Goals</h1>
+			<p><strong> Modular</strong> Almost every piece of Angular2 should be optional, replaceable, and even used in other non-AngularJS frameworks.</p>
+			 <p><strong>Server Side Rendering</strong></p>
+			 <p><strong>Compile as a build step</strong> Angular apps parse and compile their HTML templates.  initial rendering to be speeded up  by moving the compile step into the build process.</p>
+	   </section>
+	   <section id="helloangularworld">
+		   <h1>Hello Angular World</h1>
+		   <a href="https://angular.io/resources/live-examples/quickstart/ts/plnkr.html">https://angular.io/resources/live-examples/quickstart/ts/plnkr.html</a>
+		   </section>
+		  <section id="helloangularcode">
+			  <pre><code class="ts">
+
+import {Component} from '@angular/core';
+
+// Annotation section
+@Component({
+ selector: 'my-app',
+ template: '<h1>Hello {{name}}</h1>'>
+})
+
+// Component controller
+export class AppComponent {
+ name: string;
+ constructor() {
+   this.name = 'World';
+ }
+}
+</code></pre>
+ <img class="fragment fade-up kirk" src="assets/wtf.png">
+		</section>
+		<section id="Typescriptpart">
+		<section id="ts1" data-background="assets/Sugarcubes.jpg">
+		<h1>TypeScript</h1>
+		<h3>Javascript With all the syntactic sugar you can eat</h3>
+		</section>	
+		
+		<section id="ts2" data-background="assets/Sugarcubes.jpg">
+		<svg width="700" height="700">
+<circle cx="350" cy="350" r="300" fill="darkgray" />
+   <circle cx="305" cy="300" r="230"  fill="darkblue" />
+ <circle cx="250" cy="250" r="150" fill="purple" />
+  
+   <text x="170" y="170" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#ffffff">JS (ES5)</text>
+   <text x="380" y="350" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#ffffff">ES6</text>
+ <text x="480" y="480" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#ffffff">TypeScript</text>
+</svg> 
+		</section>	
+		
+			<section id="ts3">
+		<h2>Ecmascript 6 (or ES6 or ES2015) </h2>
+		<h3>The latest version of the ECMAScript standard </h3>
+		<h3>The first update to the language since ES5 (2009)</h3>
+		<p> Major features include Classes, Modules, "The Fat arrow", <br /> Let -> a block scoped binding construct and much more</p>
+		</section>
+					<section id="ts4">
+	     <h2>Ecmascript 6 - Resources </h2>
+		<a href="http://es6-features.org/" target="_blank">http://es6-features.org/</a>
+		<a href="https://github.com/lukehoban/es6features#readme" target="_blank">https://github.com/lukehoban/es6features</a>
+		
+		
+		</section>
+		<section id="ts5" data-background="assets/Sugarcubes.jpg">
+		<h2> TypeScript </h2>
+			<h3>TypeScript syntax includes all the  features of Ecmascript 6 <br /> 
+			+ type checking, interfaces, generics, enums and decorators.
+			</h3>
+	   </section>		
+		<section id="ts6" >
+		<h2> TypeScript </h2>
+			<p>TypeScript classes are straight-forward, very similar to ES6 classes.
+           All members are public by default, but members can be marked as private.<br /><strong>This is enforced at the compiler level, not in the output JavaScript source.</strong>
+	   </section>	
+	   <section id="ts7" data-background="assets/Sugarcubes.jpg">
+		   <h2>TypeScript - Resources</h2>
+		   <p><br /></p>
+		   <h3>www.typescriptlang.org</h3>
+		   </section></section>
+	   <section id="ng21" >
+		<h1> Angular 2 <br /> Building Blocks </h1>
+	   </section>		
+	   <section id="ng22" >
+		<ul> 
+			<li>Module</li>
+			<li>Component</li>
+			<li>Directives</li>
+			<li>Services</li>
+			<li>Pipes ( same as Angular filters) </li>
+			<li>Template</li>
+			<li>Metadata</li>																					
+		</ul> 
+	   </section>
+	   <section id="module1">
+		   <h1>Modules</h1>
+		   <p>Import/Export</p>
+		   <p>Library Modules</p>
+		   </section>		
+	    <section id="comp1" >
+		<p> View defined in a template</p>
+		<p>+</p>
+		<p>Logic defined in a class</p>
+		<p><small>@Decorated with metadata about the component</small></p>
+		<p>=</p>
+		<h2>Component</h2>
+	   </section>	
+	   
+	    <section id="comp2" data-background="assets/hero3.jpg" >
+		<h2>Components</h2>
+		<p>The basic building block of all Angular 2 Applications</p>
+		<p>A component controls a portion of the screen — a view — through its associated template.</p>
+		<p>Every Angular App has at least one root component</p>
+		<p>Most Angular Apps are component trees tied to external resources through services that are injected to it.</p>
+	   </section>	
+	   
+
+	   
+	   <section id="comp3">
+				  <pre><code class="ts">import {Component} from '@angular/core';
+// Annotation section
+@Component({
+ selector: 'my-app',
+ template: '<h1>Hello {{name}}</h1>'>
+})
+// Component controller
+export class AppComponent {
+ name: string;
+ constructor() {
+   this.name = 'World';
+ }
+}
+</code></pre> 
+<p><small>@Component : A decorator, metadata about the component; name of selector, Html template(s), style template(s), properties, events , dependencies on other components etc
+</small></p> 
+<pre><code class="html">&lt;html&gt;
+&lt;head&gt;
+  <title>Angular 2 Hello Worldy</title>
+  <script src="http://libs/traceur.js"></script>
+  <script src="http://libs/system@0.16.js"></script>
+  <script src="https://libs/angular2.dev.js"></script>
+&lt;/head&gt;
+&lt;body&gt;
+    <my-app></my-app>
+  <script>System.import('app');</script>
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>  
+   	</section>
+	   
+	   	   <section id="comp4"> More info about component communication: 
+				 <a href="https://angular.io/docs/latest/cookbook/component-communication.html">
+				https://angular.io/docs/latest/cookbook/component-communication.html</a> 
+
+<svg width="1100" height="700">
+	 <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refx="0" refy="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#fff" />
+    </marker>
+  </defs>
+	
+	
+   <text x="100" y="50" font-family="Verdana"   font-size= "28"
+               stroke= "none"
+               fill= "#ffffff">Parent -> Child</text>
+ 	
+<ellipse cx="180" cy="130" rx="100" ry="50" fill="lightblue" />
+ <text x="123" y="135" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#000000">Application</text>
+			   
+			   
+<ellipse cx="100" cy="300" rx="100" ry="50" fill="lightblue" />
+ <text x="55" y="305" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#000000">Filters</text>
+			   
+<line x1="205" y1="170" x2="230" y2="246" stroke="#fff" stroke-width="3" marker-end="url(#arrow)" />
+<line x1="170" y1="170" x2="150" y2="240" stroke="#fff" stroke-width="3" marker-end="url(#arrow)" />
+
+ <text x="220" y="200" font-family="Verdana" font-size= "20"
+               stroke= "none"
+               fill= "#fff">[talks]="someExp"</text>
+
+<text x="720" y="200" font-family="Verdana" font-size= "20"
+               stroke= "none"
+               fill= "#fff">(rate)="onRate()"</text>
+
+			   
+<ellipse cx="315" cy="300" rx="100" ry="50" fill="lightblue" />
+ <text x="275" y="305" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#000000">Talks</text>
+			   
+<line x1="280" y1="345" x2="230" y2="420" stroke="#fff" stroke-width="3" marker-end="url(#arrow)" />
+<line x1="370" y1="340" x2="380" y2="385" stroke="#fff" stroke-width="3" marker-end="url(#arrow)" />
+
+ <text x="380" y="374" font-family="Verdana" font-size= "20"
+               stroke= "none"
+               fill= "#fff">[talks]="someExp"</text>
+			   
+ <text x="880" y="374" font-family="Verdana" font-size= "20"
+               stroke= "none"
+               fill= "#fff">(rate)="onRate()"</text>
+
+<ellipse cx="130" cy="465" rx="100" ry="50" fill="lightblue" />
+ <text x="100" y="465" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#000000">Talks</text>
+			   
+<ellipse cx="345" cy="460" rx="100" ry="50" fill="lightblue" />
+ <text x="320" y="465" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#000000">Talk</text>
+
+
+ <text x="600" y="50" font-family="Verdana"   font-size= "28"
+               stroke= "none"
+               fill= "#ffffff">Child -> Parent</text>
+			   
+<ellipse cx="680" cy="130" rx="100" ry="50" fill="lightblue" />
+ <text x="623" y="135" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#000000">Application</text>
+			   
+			   
+<ellipse cx="600" cy="300" rx="100" ry="50" fill="lightblue" />
+ <text x="555" y="305" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#000000">Filters</text>
+			   
+
+<line x2="670" y2="205" x1="650" y1="260" stroke="#fff" stroke-width="3" marker-end="url(#arrow)" />
+<line x2="705" y2="205" x1="730" y1="275" stroke="#fff" stroke-width="3" marker-end="url(#arrow)" />
+			   
+<ellipse cx="815" cy="300" rx="100" ry="50" fill="lightblue" />
+ <text x="775" y="305" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#000000">Talks</text>
+			   
+<line x2="780" y2="370" x1="720" y1="445" stroke="#fff" stroke-width="3" marker-end="url(#arrow)" />
+<line x2="870" y2="370" x1="880" y1="415" stroke="#fff" stroke-width="3" marker-end="url(#arrow)" />
+
+<ellipse cx="630" cy="460" rx="100" ry="50" fill="lightblue" />
+ <text x="600" y="465" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#000000">Talk</text>
+			   
+<ellipse cx="845" cy="460" rx="100" ry="50" fill="lightblue" />
+ <text x="820" y="465" font-family="Verdana"   font-size= "24"
+               stroke= "none"
+               fill= "#000000">Talk</text>
+</svg> 
+		  </section>
+		  
+		  <section id="template1">
+	<h2>Template</h2>
+	<pre><code class="html"><div *ngIf="currentGameState!=1">
+<button  class="btn btn-lg btn-primary btn-block" 
+	(click)="startGame()" 
+	type="submit">
+	Play
+</button>
+</div>
+<div class="smallpadd">
+	<span *ngFor="#letter of incorrectLetters">{{letter}} </span>
+</div>
+<div>Moves Left : {{nrOfMoves}}</div>
+<div id="theWord" class="smallpadd">
+	<span *ngFor="#letter of currentWord">
+		<span *ngIf="letterCorrect(letter)">{{letter}}</span>
+		<span *ngIf="!letterCorrect(letter)">_</span>
+	</span>
+</div>
+	   </code></pre>
+	   </section>
+		<section>
+	   <section id="dir1">
+		   <h1>Directives</h1>
+		   </section>
+	   <section id="dir2">
+		   <pre><code class="ts">@Directive({
+selector: '[tooltip]',
+inputs: [ 'text: tooltip' ],
+host: {
+  '(mouseenter)': 'onMouseEnter()',
+  '(mouseleave)': 'onMouseLeave()'
+}})
+
+class Tooltip {
+text:string;
+overlay : Overlay; // NOT YET IMPLEMENTED
+overlayManager : OverlayManager; // NOT YET IMPLEMENTED
+constructor( overlayManager : OverlayManager) {
+  this.overlay = overlay;
+}
+onMouseEnter() {
+  // exact signature to be determined
+  this.overlay = this.overlayManager.open(text, ...);
+}
+onMouseLeave() {
+  this.overlay.close();
+  this.overlay = null;
+}}
+</code></pre>
+			   
+		  </section>
+		  <section id="dir3">
+<pre><code class="ts">import {Tooltip} from 'tooltip';
+@Component({
+selector: 'my-component',
+template: `<div tooltip="foo">Hello, {{message}}</div>`,
+directives: [Tooltip]
+})
+class MyComponent {
+constructor() {
+  this.message = 'World';
+}}
+</pre></code>
+<p>When a component uses a directive or another component, these are added to the array of directives specified in the decorator.</p>
+<p>
+When a component uses a service, it is added to the array of providers.
+	</p>
+		 
+		</section>
+		</section>
+		<section id="services">
+			<h2>Services (The injectables) </h2>
+			<br />
+			<pre><code class="ts">import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+@Injectable()
+export class UserService {
+  constructor(private http:Http) {}
+  
+  getById(id:string): any {
+    return this.http.get('api/users/' + id)
+    .map(res=> res.json());
+  }
+			</code></pre>
+		</section>
+		<section id="pipe1">
+		<h2>Pipes</h2>
+		<p>Pipes are used to transform/massage data.</p> 
+		<p>Input goes into the pipe and is transformed to a desired output.</p>
+		<p>There are a couple of built-in pipes such as DatePipe, UpperCasePipe, LowerCasePipe, CurrencyPipe, PercentPipe, AsyncPipe</p>
+		<p>We add parameteres to a pipe by following the pipe name with a colon:</p>
+		<pre><code class="html"><p>Your is {{ birthday | date:"yyyy-MM-dd }}</p></code></pre>
+				</section>
+			<section id="pipe2">
+				<h2>Custom Pipes</h2>
+				<pre><code class="ts">import { Pipe, PipeTransform } from '@angular/core';
+/*
+ * Raise the value exponentially
+ * Takes an exponent argument that defaults to 1.
+ * Usage:
+ *   value | exponentialStrength:exponent
+ * Example:
+ *   {{ 2 |  exponentialStrength:10}}
+ *   formats to: 1024
+*/
+@Pipe({name: 'exponentialStrength'})
+export class ExponentialStrengthPipe implements PipeTransform {
+  transform(value: number, exponent: string): number {
+    let exp = parseFloat(exponent);
+    return Math.pow(value, isNaN(exp) ? 1 : exp);
+  }
+}
+					</code></pre>
+				
+			</section>
+			<section id="bp1">
+				<h2>The Big Picture</h2>
+				 <img src="assets/overview2.png">
+				 <a href="https://angular.io/docs/ts/latest/guide/architecture.html">https://angular.io/docs/ts/latest/guide/architecture.html</a>
+			</section>
+
+<section id="bp2">
+	<h2>The Big Picture</h2>
+				 <p>We write applications by composing HTML <strong>templates</strong> with Angularized-markup, writing <strong>component</strong> classes to manage those templates, adding application logic in <strong>services</strong> and handing the top root component to Angular's bootstrapper</p>
+	
+	</section>
+			<section id="howto1">
+				<h2>How to start coding ?</h2>
+				<ul>
+					<li>NodeJS</li>
+					<li>TypeScript</li>
+					<li>A web server - Lite-Server works nice</li>
+					<li>Editor - I use Visual Studio Code. WebStorm, Sublime and Atom also work.</li> 
+					
+			</section>
+			<section id="howto2">
+			<pre><code>
+goto
+https://nodejs.org/en/download
+install node
+open a command window and type the following
+npm install typescript -g
+npm install lite-server -g
+				
+install Visual Studio Code
+https://code.visualstudio.com/
+				
+create a folder for your project
+open the folder in the editor and start coding				
+				</code></pre>	
+		    </section>
+			
+             <section id="howto3">
+				 <h2>Can you be more specific?</h2>
+				  <p>This is the official quickstart: <a href="http://angular.io/docs/ts/latest/quickstart.html">http://angular.io/docs/ts/latest/quickstart.html</a></p>
+					<p>And here is my less explanatory more compact version <a href="https://github.com/Cyberdada/Angular2Workshop/wiki/Setup,-Startup">https://github.com/Cyberdada/Angular2Workshop/wiki/Setup,-Startup</a></p> 
+			</section>			
+			</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+ 
+<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+</body>
+</html>
