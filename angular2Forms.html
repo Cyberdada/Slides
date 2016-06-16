@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">	
+<head>
+	<meta charset="utf-8">
+	<title>Angular 2 - What, Why How ? </title>
+	<meta name="author" content="Magnus Gudmundsson">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/moon.css" id="theme">	
+	<link rel="stylesheet" href="css/homegrown.css">
+
+	
+			<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/agate.css">
+	<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	
+	<!--Add support for earlier versions of Internet Explorer -->
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+ 
+<body>
+	<!-- Wrap the entire slide show in a div using the "reveal" class. -->
+	<div class="reveal">
+		<!-- Wrap all slides in a single "slides" class -->
+		<div class="slides">
+ 
+			<!-- ALL SLIDES GO HERE -->
+			<!-- Each section element contains an individual slide -->
+			<section>
+			 <img src="assets/angular2.png">
+				<h1>Angular 2 -Forms</h1>
+				<p>Magnus Gudmundsson</p>		
+				<p>CyberDaDa</p>
+			</section>
+			
+			<section id="thefuture">
+				    <img src="assets/badform2.gif">
+				  <h2> Forms? Easy peacy</h2>
+				  <p>Just make an input tag, then a submit button</p>
+				  <P>and we are done... what can possibly go wrong?</p>
+			</section>
+ 
+			<section id="thefuture">
+			  <form> 
+				  <img src="assets/badform.png">
+				  <p></p>
+				  <button> &lt;&lt; Back</button>
+				  <button> &lt;&lt; Front &gt;&gt;</button>
+				  <button>  Next &gt;&gt;</button>
+				  </form>
+			</section>
+			
+			
+			<section id="bp1">
+				<h3>Some things that need to be considered...</h3>
+	     <ul>
+			 <li>Input is dangerous, it modifies data</li>
+			 <li>It can be entered in funny ways</li>
+			 <li>Expectations and Error Messages need to be clear</li>
+			 <li>Parts of the form can have complex dependencies</li>
+			 <li>As forms can be heavily UI reliant, they are hard to test</li>
+			 </ul>
+			</section>
+			<section id="bps">
+				<h2>Expectations, and Error messages...</h2>
+                 <img src="assets/cabbage.png">
+
+					
+				</section>
+			
+			<section id="bp2">
+				<h1>Angular 2 to the Rescue!</h1>
+			</section>
+
+			<section id="bp3">
+				<h2>Sometimes you hear about two flavours</h2>
+				<h2>Template Based Forms</h2>
+				<h2>Model Based Forms</h2>
+				</section>
+			
+			<section id="forms1">
+				<h2>Controls and Control Groups</h2>
+				<h2>Validators</h2>
+				<h2>FormBuilder</h2>
+				<h2>Observing changes</h2>
+			</section>
+
+			<section id="forms2">
+				<h2>Controls and Control Groups</h2>
+				<p>A control represents a single input field. It encapsulates the fields value and state</p>
+			</section>
+			
+			<section id="form3">
+				<h2>Control States</h2>
+			   <p>NgControl automatically watches for changes. Controls have values and a validation state which is determined by an optional validation function</p>
+			   <table>
+				   <thead>
+					   <tr><th><strong>State</strong></th><th><strong>Class (if True)</strong></th><th><strong>Class (if false)</strong></th></tr>
+				   </thead>
+				   <tbody>
+					  <tr><td>Has been visited</td><td>ng-touched</td><td>ng-untouched</td></tr>
+					  <tr><td>Value changed</td><td>ng-dirty</td><td>ng-pristine</td></tr>
+					<tr><td>Value valid</td><td>ng-valid</td><td>ng-invalid</td></tr>
+				   </tbody>
+				   </table>
+				</section>
+				<section id="form4">
+					<p>Of course you must add the css needed to reflect the state</p>
+					</section>
+					<section id="form5">
+					<p>Hello form component...</p>
+					<pre><code class="ts">import {Component} from '@angular/core';
+						
+	@Component({
+		selector: 'my-room',
+		templateurl: 'app/room.component.html'
+	})
+export class RoomComponent {
+    onSubmit(v:any) {
+        alert(JSON.stringify(v));
+    }
+}
+</code></pre>
+					<pre><code class="html"><form #f=ngForm (ngSubmit)="onSubmit(f.value)">
+ <hr>
+    <input type="text" class="form-control" placeholder="Name" ngControl="name">
+    <hr>
+    <textarea class="form-control" rows="4" placeholder="Description" ngControl="description" ></textarea>
+    <button type="submit">Save</button>
+  </form>
+</form>
+</code></pre>	
+</section>
+<section id="cg1">
+	<h2>Control Groups</2>
+	<p> Time for a small demo? </p>
+</section>
+<section id="cg1">
+	<h2>What was gained?</h2>
+	<p>Easier to test validators when not in template?</p>
+	<p>Easier to reason about?</p>
+	<p>Cleaner Template?</p>
+	<p>Nice JSON formatting of object for free</p>
+	<p>No need for an anemic POJO on clientside?</p>
+</section>
+					
+
+			<section>
+			<h2>Another way?</h2>
+			<p>There is also another way to do forms in Angular2</p>
+			<p>Template Driven Forms</p>
+			<p>Very similar to the old Angular Forms</p>
+			<a href="https://angular.io/docs/ts/latest/guide/forms.html">https://angular.io/docs/ts/latest/guide/forms.html</a>
+			</section>
+
+			
+			</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+ 
+<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+</body>
+</html>
