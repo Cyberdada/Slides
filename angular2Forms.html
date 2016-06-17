@@ -90,6 +90,23 @@
 				<h2>Model Based Forms</h2>
 				</section>
 			
+
+			<section id="comparison">
+				<table>
+<thead>
+	<tr><th></th><th>Model Based</th><th>Template Based</th>
+	</tr>
+
+	</thead>
+<tbody>
+<tr><td></td><td>ngModel</td><td>FormControl</td></tr>
+<tr><td></td><td>ngModelGroup</td><td>FormGroup</td></tr>
+	
+</tbody>
+					</table>
+
+
+				</section>
 			<section id="forms1">
 				<h2>Controls and Control Groups</h2>
 				<h2>Validators</h2>
@@ -98,13 +115,22 @@
 			</section>
 
 			<section id="forms2">
-				<h2>Controls and Control Groups</h2>
-				<p>A control represents a single input field. It encapsulates the fields value and state</p>
+				<h2>ngModel/FormControl</h2>
+				<p>They represents a single input field. It encapsulates the fields value and state</p>
+				<p>Additionaly ngModel can by tied to an underlying model, with or without a two binding<p>
 			</section>
-			
+
+			<section id="bananabox">
+				<h2>The Banana Box</h2>
+				<h2></h2>
+				<p> [(ngModel)] </>
+			</section>
+
+
 			<section id="form3">
 				<h2>Control States</h2>
-			   <p>NgControl automatically watches for changes. Controls have values and a validation state which is determined by an optional validation function</p>
+			   <p>NgModel /FormControl automatically watches for changes.
+				    Controls have values and a validation state which is determined by an optional validation function</p>
 			   <table>
 				   <thead>
 					   <tr><th><strong>State</strong></th><th><strong>Class (if True)</strong></th><th><strong>Class (if false)</strong></th></tr>
@@ -133,19 +159,18 @@ export class RoomComponent {
     }
 }
 </code></pre>
-					<pre><code class="html"><form #f=ngForm (ngSubmit)="onSubmit(f.value)">
+					<pre><code class="html"><form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
  <hr>
-    <input type="text" class="form-control" placeholder="Name" ngControl="name">
+    <input type="text" class="form-control" placeholder="Name" name="name ngModel>
     <hr>
-    <textarea class="form-control" rows="4" placeholder="Description" ngControl="description" ></textarea>
+    <textarea class="form-control" rows="4" placeholder="Description" name="description" ngModel></textarea>
     <button type="submit">Save</button>
   </form>
 </form>
 </code></pre>	
 </section>
 <section id="cg1">
-	<h2>Control Groups</2>
-	<p> Time for a small demo? </p>
+	<h1> Time for a small demo? </h1>
 </section>
 <section id="cg1">
 	<h2>What was gained?</h2>

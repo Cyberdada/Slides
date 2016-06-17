@@ -372,11 +372,11 @@ export class AppComponent {
 </button>
 </div>
 <div class="smallpadd">
-	<span *ngFor="#letter of incorrectLetters">{{letter}} </span>
+	<span *ngFor="let letter of incorrectLetters">{{letter}} </span>
 </div>
 <div>Moves Left : {{nrOfMoves}}</div>
 <div id="theWord" class="smallpadd">
-	<span *ngFor="#letter of currentWord">
+	<span *ngFor="let letter of currentWord">
 		<span *ngIf="letterCorrect(letter)">{{letter}}</span>
 		<span *ngIf="!letterCorrect(letter)">_</span>
 	</span>
