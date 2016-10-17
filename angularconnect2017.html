@@ -68,9 +68,9 @@
 			
 			<section id ="thefuture3">
 				<h2>Semantic versioning [  x.x.x]<h2>
-				<h2>A major update every 6th month<h2>
+				<h3>A major update every 6th month<h3>
 				<h3>Breaking changes will be announced in good time<h3>	
-				<h3>A recomended migration path will be documented<h3>
+				<h3>A recommended migration path will be documented<h3>
 				<h3>Always more than 6 months to upgrade</h3>
 			</section>
 				
@@ -108,10 +108,14 @@
            </section>
 		   
 		   <section id="angular cli1">
-			   <h1>Angular cli</h1>
-			   <h2> Magic... </h2>
-			   <h2> Boring....</h2>
+			   <h1>Angular CLI</h1>
+			   <h3>Stephen Fluin</h3>
+			   <h3>...</h3>
+			   <h4>Removing all the boring stuff with magic</h4>
+			   <h3></h3>
+			   <h4>https://www.youtube.com/watch?v=uBRK6cTr4Vk</h4>
 			   
+			 
 			   </section>
 			
 			<section id="angular cli2">
@@ -130,6 +134,11 @@
 npm install -g angular-cli
 					   </code>
 					   </pre>
+					   <pre><code class="ts">
+npm install -g angular-cli@latest
+					   </code>
+					   </pre>
+
 			</section>
               <section id="angular cli4"> 
 				   <pre><code class="ts">
@@ -151,17 +160,117 @@ ng new my-new-project
 		<ul> 
 			<li>dry-run</li>
 			<li>blueprint</li>
-			<li>skip-npm</li>
+			<li>skip-npm / skip-git</li>
 			<li>source-dir</li>
 			<li>style</li>
 			<li>prefix</li>
-			</ul>		   
+			<li>mobile</li>
+			<li>routing</li>
+			</ul>
+			</section>
+					   <section id="newproject">
 				   <pre><code class="ts">
-ng new my-new-project
+             ng new my-new-project
 					   </code>
 					   </pre>
 			</section>
+			
+			<section id="generate">
+				<h2>Generate (stuff) </h2>
+				
+				<ul>
+					<li>Module</li>
+					<li>Component</li>
+					<li>Service</li>
+					<li>Directive</li>
+					<li>Route  [Currently not working]</li>
+					<li>Pipe</li>
+					<li>Class</li>
+					</ul>
+					
+					  <pre><code class="ts">
+             ng generate component bongocomp
+					   </code>
+					   </pre>
+			</section>
+			<section id="generate2">
+				<p> Generation of components generates: </p>
+				<ul>
+					<li>Component</li>
+					<li>html template</li>
+					<li>css template</li>
+					<li>spec file</li>
+			</section>
+			<section id="serve">
+			<h1>Serve! </h1>
+			</section>
+			<section id="serving">
+				 <pre><code class="ts">
+             ng serve
+					   </code>
+					   </pre>
+					</section>
+   <section id="serving2">
+	<ul>
+		<li>Compiles Sass/less</li>
+		<li>TS transpilation</li>
+		<li>Bundles Javascript + css</li>
+		<li>Asset optimization</li>
+		<li>Virtual filesystem for assets</li>
+		<li>Live-reload via websockets (broken atm?)</li>
+		<li>Code splitting (bundles load children routes seperately</li>
+	<ul>
+	</section>
+			<section id="build">
+			<h1>Build! </h1>
+				 <pre><code class="ts">
+             ng build
+					   </code>
+					   </pre>
+			
+			<h3>Adds minification uglification and a "real" filesystem</h3>
+			</section>
+			
+			<section id="test">
+				 <pre><code class="ts">
+ng test  (Karma/Jasmine/Istanbul coverage)
+ng e2e   (Protractor)
+					   </code>
+					   </pre>
+					</section>
+				
+			<section id="distribute">
+				 <pre><code class="ts">
+ng github-pages:deploy 
+					   </code>
+					   </pre>
+					   <p>
++ build creates the /dist/ folder
+copy deploy anywhere :)</p>
+					</section>
+					<section>
+						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTUjoWid7t8CdJjUghmfVUJE7mJMh8OcMtRd_CTzlYtdR0ssH2g">
+</section>
+<section id="clifuture">
+	<ul> 
+		<li> AOT </li>
+		<li>Mobile (PWA) </li>
+		<li>Universal</li>
+		<li>Refactoring</li>
+		<li>Upgrades </li>
+		<li> Addons</li>
+		<li>Performance</li>
+		<li>Library developer mode</li>
+</section>					
+		
+		<section id="graphQL">
+			<h1>Graph QL</h1> 		
+			</section>
 
+<section id="lastnotleast">
+	<h1>Last (but not least)</h1>
+	</section>
+	
 			<section>
 			<h2>ngVikings</h2>
 			<p>ngVikings.org</p>
