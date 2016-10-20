@@ -248,7 +248,8 @@ ng github-pages:deploy
 + build creates the /dist/ folder
 copy deploy anywhere :)</p>
 					</section>
-					<section>
+					
+		<section id="futureismurder">
 						<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTUjoWid7t8CdJjUghmfVUJE7mJMh8OcMtRd_CTzlYtdR0ssH2g">
 </section>
 <section id="clifuture">
@@ -261,12 +262,128 @@ copy deploy anywhere :)</p>
 		<li> Addons</li>
 		<li>Performance</li>
 		<li>Library developer mode</li>
+	</ul>
 </section>					
 		
 		<section id="graphQL">
-			<h1>Graph QL</h1> 		
+			<h1>Graph QL</h1> 
+			<img src="http://graphql.org/img/logo.svg" width="50%" />	
 			</section>
 	
+	<section id="graphfacebook">
+		<h2>Developed by Facebook around 2012</h2>
+		<h2>Open Sourced 2015</h2>
+	</section>
+
+	<section id="rest">
+	<h2>Problems with REST?</h2>
+	</section>
+	
+	<section id="mobile">
+	<img src="https://ithemes.com/wp-content/uploads/2012/07/mobile300.png" />
+	<h3>Average roundtrip time: 12 sec</h3>
+	<h3>Average loss of datapackets 20%</h3>
+	</section>
+  
+    <section id="fatrest">
+		<h3>Lets make fat calls :)  </h3>
+	</section>	
+		
+	<section id="restXY">
+		 <h3>Coupling: Tight</h3>
+		  <h3>Cohesion: Low</h3> 
+         <h3>Server knows to much about client needs</h3>
+		 <h3>Changes affect both server and client</h3>
+	</section>
+		
+	
+	<section id="relationalsoup">
+		<h3>Escape from the relational soup? </h3>
+		<img src="assets/escape1.jpg" />
+	</section>
+	
+	<section id="graphQLxxxx"> 
+	<h3> A query language that allows you to specify what you need, and also in relation to what</h3>
+	<h4>1000000000000000 requests per day</h4>
+	<h4>used at scale under load</h4>
+	</section>
+	
+	<section id="helloworld"> 
+				 <pre><code>
+    {
+     me {
+      name
+     }
+    }
+</code></pre>
+		
+	</section>
+	
+	<section id="response">
+		<table width="80%">
+			<tbody>
+				<tr>
+					<td>
+				 <pre><code class="json">
+    {
+     me {
+      name
+     }
+    }
+</code></pre>
+					</td>
+					<td>
+				 <pre><code class="json">
+    {
+     "me": {
+      "name": "CyberDaDa"
+     }
+    }
+</code></pre>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+	</section>
+	<section id="response2">
+						 <pre><code class="json">
+    {
+     user(id:23424) {
+      name
+     }
+    }
+</code></pre>
+	</section>
+<section id="response3">
+				 <pre><code class="json">
+    {
+     me {
+      name, 
+	  profilePicture {
+	     width,
+	     height, 
+	     url
+        }
+      }
+   }
+</code></pre>
+</section>
+<section id="response3">
+				 <pre><code class="json">
+    {
+     me {
+      name, 
+	  friends {
+	     name,
+	     events {
+            name
+         }  
+       }
+     }
+   }
+</code></pre>
+	
+</section>
 	<section id="g2">
 		<p>Graph QL 
 
