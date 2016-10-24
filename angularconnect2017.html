@@ -98,11 +98,14 @@
 
 			<section id="forms1">
 				<h1>And many others... :) </h1>
-				<h2>RxJS</h2>
-				<h2>Going from 1.5 to 2</h2>
-				<h2>Forms</h2>
-				<h2>How to do a meetup</h2>
-				<h2>native script</h2>
+				<ul>
+				<li>RxJS</li>
+				<li>The new router</li>
+				<li>Going from 1.5 to 2</li>
+				<li>Forms</li>
+				<li>How to do a meetup</li>
+				<li>Native script</li>
+				</ul>
 			</section>
 
            </section>
@@ -113,11 +116,13 @@
 			   <h3>...</h3>
 			   <h4>Removing all the boring stuff with magic</h4>
 			   <h3></h3>
-			   <h4>https://www.youtube.com/watch?v=uBRK6cTr4Vk</h4>
-			   
-			 
+			   <h4>https://www.youtube.com/watch?v=uBRK6cTr4Vk</h4>	 
 			   </section>
-			
+			   
+			   <section id="cliwebsite">
+				   <p><b>cli.angular.io</b></p>
+				  <img src="https://cdn.scotch.io/1/A1JOLTSrRiGbTxtoffdY_EYV5HdPQYKy7DZnVXK99_Butl1BO.png" />
+				  </section>
 			<section id="angular cli2">
 			   <h2>stuff you can do with Angular CLI</h2>
 					<ul>
@@ -151,7 +156,6 @@ ng new my-new-project
 		<li>All npm dependencies in place</li>
 	<li>Generated code follows styleguide</li>
 		<li>Typescript and testing configuration</li>
-			<li>Generated code follows styleguide</li>
 	</ul>
 			</section>
 			
@@ -263,18 +267,110 @@ copy deploy anywhere :)</p>
 		<li>Performance</li>
 		<li>Library developer mode</li>
 	</ul>
-</section>					
+</section>	
+<section id="morecliresources">
+	<h2>More resources</h2>
+	<ul>
+		<li><a href="https://scotch.io/tutorials/use-the-angular-cli-for-faster-angular-2-projects">
+		Use the Angular CLI For Faster Angular 2 Projects</a>
+	   <p>A detailed overview</p>	
+		</li>
+		<li><a href="https://medium.com/@martin_hotell/angular-cli-and-real-development-productivity-4ba3c1865eda#.9xjf1i5cm">
+		Angular CLI and real development productivity</a>
+		<p>A more biased overview</p>
+	</ul>
+  
+</section>
+
+<section id="animation">
+	<h2>Angular 2 Animations</h2>
+	<h3>Matias Niemela</h3>
+	<h3>...</h3>
+	<h4>https://www.youtube.com/watch?v=4VDmIVrML34</h4>	 
+</section>	
+
+<section id="animation2">
+<ul> 
+	<li>
+	Defined as part of the metadata inside @Component
+	</li>
+	<li>Own DSL (Domain Specific Lanuage)</li>
+	<li>State-Based	</li>
+	<li>Programatic Access*</li>
+</ul>
+</section >
+<section id="animation3">
+	<ul>
+	<li> <b> DSL != CSS + HTML </b></li>
+	<li> No transitionss/Keyframes </li>
+	<li> Functional Composition </li> 
+	<li> Animations are Platform Agnostic </li>
+	<li> AOT Friendly </li>
+	</ul>
+</section>
+
+<section section id="animation4"> 
+	
+	<p>Based upon the Web-Animation API </p>
+</section> 
+<section id="animation5">
+	<p> Animations defined in the components metadata part</p>
+	<p> And then invoked in the template part with @prefix </p>
+</section>
+
+<section id="animation6">
+
+	<pre> <code class="ts">
+	@Component({
+   selector: 'slider',
+   styleUrls: ['./demo_1/slider.css'],
+   animations: [
+       trigger('openClose', [
+           state('void, closed', style({ height: 0 })),
+           state('open', style({ height: '*' })),
+           transition('* => *', animate('500ms ease-out'))
+       ])
+   ],</code></pre>
+			<pre> <code class="html">
+<div class="container">
+     <header (click)="toggle()">
+       <ng-content select=".header"></ng-content>
+     </header>
+     
+     <div class="content-container" [@openClose]="open ? 'open' : 'closed'">
+       <div class="inner">
+          <ng-content select=".content"></ng-content>
+          <button (click)="open=false">Close</button>
+       </div>
+     </div>
+     </div>
+	</code></pre>
+</section>
+
+<section id="bonestretcher1">
+<h1> ....Bone Stretcher....</h1>
+</section>			
 		
 		<section id="graphQL">
-			<h1>Graph QL</h1> 
+			<h2>GraphQL - an Api query language</h2> 
 			<img src="http://graphql.org/img/logo.svg" width="50%" />	
 			</section>
+	<section id="ngjesus">
+		<h3>Connect your Angular app to any existing backend with GraphQL </h3>
+		<h3> Uri Goldstein</h3>
+		<h3>...</h3>
+		<h3>https://www.youtube.com/watch?v=AEjC-gyOTJQ</h3>
+	</section>
 	
 	<section id="graphfacebook">
 		<h2>Developed by Facebook around 2012</h2>
 		<h2>Open Sourced 2015</h2>
 	</section>
 
+   <section id="fbookmobile">
+	<img src="https://ithemes.com/wp-content/uploads/2012/07/mobile300.png" style="border:none;" />   
+   </section>
+   
 	<section id="rest">
 	<h2>Problems with REST?</h2>
 	</section>
@@ -286,6 +382,7 @@ copy deploy anywhere :)</p>
 	</section>
   
     <section id="fatrest">
+		<h3> Cut the Restafarian crap, </h3>
 		<h3>Lets make fat calls :)  </h3>
 	</section>	
 		
@@ -301,15 +398,28 @@ copy deploy anywhere :)</p>
 		<h3>Escape from the relational soup? </h3>
 		<img src="assets/escape1.jpg" />
 	</section>
+	<section id="perfectworld">
+		<h3>In a perfect world</h3>
+		<ul>
+			<li>Declare your data needs like you think about it</li>
+			<li>Know in advance what you can fetch</li>
+			<li>Decoupling from the server world</li>
+			<li>Each Component declares its own data needs, and merges it into one round trip</li>
+			<li>Single Endpoint</li>
+	</section>
+	
 	
 	<section id="graphQLxxxx"> 
+	<h2>GraphQL </h2>
 	<h3> A query language that allows you to specify what you need, and also in relation to what</h3>
 	<h4>1000000000000000 requests per day</h4>
 	<h4>used at scale under load</h4>
 	</section>
-	
+	<section id="heeloworldy">
+		<h1> Hello GraphQL World</h1>
+	</section>
 	<section id="helloworld"> 
-				 <pre><code>
+					 <pre><code>
     {
      me {
       name
@@ -320,6 +430,7 @@ copy deploy anywhere :)</p>
 	</section>
 	
 	<section id="response">
+		<p>Client <b>asks</b> for and <b>gets exactly</b> what he wants</p>
 		<table width="80%">
 			<tbody>
 				<tr>
@@ -358,10 +469,10 @@ copy deploy anywhere :)</p>
 				 <pre><code class="json">
     {
      me {
-      name, 
+      name 
 	  profilePicture {
-	     width,
-	     height, 
+	     width
+	     height 
 	     url
         }
       }
@@ -369,65 +480,167 @@ copy deploy anywhere :)</p>
 </code></pre>
 </section>
 <section id="response3">
+		<p>One to Many?</p>
+
 				 <pre><code class="json">
-    {
+  {
      me {
-      name, 
-	  friends {
-	     name,
-	     events {
-            name
-         }  
-       }
-     }
-   }
+        name
+	    friends {
+	      name
+	 }
+	 events {
+        name
+     }}
+  }
+
 </code></pre>
 	
 </section>
-	<section id="g2">
-		<p>Graph QL 
-
-Been around since 2012
-open sourced 2015
-Developed by Facebook
-beyond REST endpoints?
-Modern take on how to build a API
-
-example of how to build Graph QL 
-https://www.youtube.com/watch?v=DNPVqK_woRQ
-
-Query
-Mutation
-
-
-Relay server
-
-
-GraphQL server tutorial for Node.js with SQL, MongoDB and REST
-https://www.youtube.com/watch?v=PHabPhgRUuU
-
-localhost:8080/graphiql
-			
-GraphQL query language :
-http://graphql.org/learn/queries/
-			
-problem  REST API
-Excessive roundtrips
-		</p>
+<section id="versioning"> 
+	<p> Models and views live on the client -> Versioning much easier (server supports all historical variants)</p>
 	</section>
+	
+	<section id="Notastorage">
+	<p> <b>NOT</b> a storage engine</p>
+	<p> Queries run arbitrary code</p>	
+	</section>
+	
+	<section id="svgimage">
+		<svg width="1100" height="700">
+			 <defs>
+    <filter id="f3" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceAlpha" dx="1" dy="1" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="1" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+			
+			<rect width="600" height="100" x="100" y="100" style="fill:red;stroke-width:1;stroke:rgb(0,0,0)" />
+			<rect width="600" height="100" x="100" y="205"  style="fill:green;stroke-width:1;stroke:rgb(0,0,0)" />
+			<rect width="200" height="100" x="100" y="310"  style="fill:darkblue;stroke-width:1;stroke:rgb(0,0,0)" />
+			<rect width="200" height="100" x="300" y="310" style="fill:darkblue;stroke-width:1;stroke:rgb(0,0,0)" />
+			<rect width="200" height="100" x="500" y="310"  style="fill:darkblue;stroke-width:1;stroke:rgb(0,0,0)" />
+
+ <text x="150" y="150" font-family="Verdana"   font-size= "20"
+               stroke= "none"
+               fill= "#ffffff" filter="url(#f3)">Graph QL </text>
+ <text x="150" y="255" font-family="Verdana"   font-size= "20"
+               stroke= "#none"
+               fill= "#ffffff" filter="url(#f3)">Existing Application Code</text>
+ <text x="150" y="360" font-family="Verdana"   font-size= "20"
+               stroke= "none"
+               fill= "#ffffff" filter="url(#f3)">SQL Database</text>
+ <text x="350" y="360" font-family="Verdana"   font-size= "20"
+               stroke= "none"
+               fill= "#ffffff" filter="url(#f3)">Feed</text>
+ <text x="550" y="360" font-family="Verdana"   font-size= "20"
+               stroke= "none"
+               fill= "#ffffff" filter="url(#f3)">Rest API</text>
+
+		</svg>
+		
+	</section>
+	
+	<section id="code">
+		<h2>In your code every field on the server can be expressed as a function.</h2>
+	</section>
+	
+	<section id="code1">
+		<p>Notice typing</p>
+					 <pre><code class="json">
+    {
+     type User {
+       name: String, 
+       profilePicture(size: Int = 50) : ProfilePicture 
+       friends: [User]
+     }
+    }
+</code></pre>
+	</section>
+	<section id="code2">
+						 <pre><code class="js">
+	new GraphQLObject({
+     type "User",
+	 fields: {
+      //name: String
+	  name(user) {
+	     return user.name;
+	  } ,
+	  
+	  //profilePicture(size: Int =50 ):ProfilePicture 
+	  profilePicture(user, {size}) {
+	     return getProfilePicForUser(user, size)
+	  },
+	  
+	  //   friends: [User]
+	  friends(user) {
+	     return user.friendsIDS.map(id => promiseUser(id))
+	  }
+    }
+   });						 
+</code></pre>
+</section>	
+
+<section id="mutation1">
+	<h3> Also supports insterts/updates/deletes</h3>
+	<h3> Called Mutations</h3>
+</section>
+
+<section id="mutation2">
+<pre><code class="js">
+	mutation {
+		createComment(
+			storyId: 432424
+			text: "That was awesome"
+		){
+			comment {
+				createTime
+				}
+		 	}
+		}
+</code></pre>	
+</section>
+
+<section id="graphiQL">
+	<h2> GraphiQL - Demo </h2>
+</section>
+<section id="angular">
+	<h2>Hey, what about Angular? </h2>
+	<h2>Angular Demo (is broken, but we can look at the code...)</h2>
+</section>
+
+		<section id="Resources">
+<p>example of how to build GraphQL api in Node </p>
+<a href="https://www.youtube.com/watch?v=DNPVqK_woRQ">https://www.youtube.com/watch?v=DNPVqK_woRQ</a>
+
+<p>
+GraphQL server tutorial for Node.js with SQL, MongoDB and REST</p>
+<a href="https://www.youtube.com/watch?v=PHabPhgRUuU">https://www.youtube.com/watch?v=PHabPhgRUuU>https://www.youtube.com/watch?v=PHabPhgRUuU</a>
+</p>
+</section>
 			
 
 <section id="lastnotleast">
 	<h1>Last (but not least)</h1>
+	<h2>Some conferences to visit: </h2>
 	</section>
+	<section id="dotJS">
+		<p><img src="http://www.dotjs.io/images/logos/dotjs/big-logo.png" /> </p>
+	<p><b>dotJS</b></p> 
+	<p>December 5 2016 Paris, France</p>
+	<p><a href="http://dotjs.io">http://dotjs.io</a> </p>
 	
-			<section>
+	<p>20% ticket discount for AngularJS Gothenburg members</P>
+	</section>
+	<section>
+		   <img src="http://ngvikings.org/images/logo-white.png" />
 			<h2>ngVikings</h2>
 			<p>ngVikings.org</p>
 			<p>February 11-12 2017</p>
 		    <p>Modestly priced :)</p>
-
-			</section>
+		    <p>?% ticket discount for AngularJS Gothenburg members</P>
+    </section>
 
 			
 			</div>
