@@ -45,7 +45,10 @@
                 <p>Magnus Gudmundsson</p>
                 <p>CyberDaDa</p>
             </section>
-            <section id="hist1">In The Beginning... The web was full of forms...
+            <section id="hist1">
+                <p>Form is emptiness, and emptiness is form - The Void. the emptiness of blue-black space, contained in everything.</p>
+                <p><i>Peter Matthiessen, The Snow Leopard</i>
+                    <p>
             </section>
             <section id="historylesson">
                 <h3>In Angular, Forms come in two flavours</h3>
@@ -77,14 +80,29 @@
                 </table>
             </section>
 
+
+
+            <section id="rform">
+                <h3>Reactive form building blocks</h3>
+                <p>formGroup</p>
+                <p>formArray</p>
+                <p>formControl</p>
+
+            </section>
+            <section id="rform2">
+                <p>A form is a formGroup </p>
+                <p>A formGroup can contain </p>
+                <p>0:M formGroups </p>
+                <p>0:M formArrays (which can contain 0:M formControls)</p>
+                <p>0:M formControls </p>
+            </section>
+
             <section id="forms2">
                 <h2>ngModel/FormControl</h2>
                 <p>They represents a single input field. It encapsulates the fields value and state</p>
-                <p>Additionaly ngModel can by tied to an underlying model, with or without a two way binding
-                    <p>
+                <p>Additionaly ngModel can by tied to an underlying model, with or without a two way binding</p>
             </section>
-
-            <section <section id="form3">
+            <section id="form3">
                 <h2>Control States</h2>
                 <p>NgModel /FormControl "automatically" watches for changes. Controls have values and a validation state which is determined by an optional validation function</p>
                 <table>
@@ -116,9 +134,8 @@
             </section>
             <section id="forms4">
                 <p>The value of an Angular form is always a JSON object</p>
-                <p>Therefore, even if you do not have an underlying datamodel</p>
-                <p>The form always has an implicit datamodel
-                    <p>
+                <p>Even if you do not have an underlying datamodel</p>
+                <p>The form always has an implicit datamodel</p>
             </section>
 
 
@@ -132,32 +149,14 @@
             <section id="bp3">
                 <p>A Custom Form Control Uses an Interface</p>
                 <p>It's called the Control Value Accessor</p>
-
             </section>
 
             <section id="cva1">
                 <h3>Control Value Accessor - Interface</h3>
-                <p>writeValue ( value:any) {}</p>
+                <p>writeValue ( value:any) {} - Write value to display in view</p>
                 <p>registerOnChange ( fn: (value:any) => void) {}</p>
                 <p>registerOnTouched ( fn: () => void): void) {}</p>
                 <p>setDisabledState ( isDisabled: boolean) {} (not required)</p>
-            </section>
-
-            <section id="writevalue">
-                <p>The writeValue will typically be called in reactive forms</p>
-                <p>When you set the formvalues in code ex:</p>
-                <pre><code class="ts">
-this.userForm.patchValue({
-	userImage: user.userImage,
-	information: {
-		nickName: user.information.nickName,
-		firstName: user.information.firstName,
-		lastName: user.information.lastName,
-		middleName: user.information.middleName,
-		email: user.information.email
-	}
-	});	
-				</code></pre>
             </section>
             <section id="cva2">
                 <p>You most also add the NG_VALUE_ACCESSOR as a provider</p>
@@ -225,6 +224,11 @@ this.userService.post(user);
                 <p>https://blog.thoughtram.io/angular/2016/07/27/custom-form-controls-in-angular-2.html</p>
             </section>
 
+            <section id="helpneeded">
+                <p>If you want to help out with the group, please reach out.</p>
+                <p>you can always send me a message on meetup :) </p>
+            </section>
+
             <section id="ngVikings">
                 <img src="assets/logo-monochrome.png">
                 <p>https://ngvikings.org/ </p>
@@ -280,44 +284,5 @@ this.userService.post(user);
         });
     </script>
 </body>
-
-</html> src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } }, { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } }, { src: 'plugin/highlight/highlight.js',
-async: true, callback: function() { hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
-</script>
-</body>
-
-</html> }, { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
-</script>
-</body>
-
-</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
-</script>
-</body>
-
-</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
-</script>
-</body>
-
-</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
-</script>
-</body>
-
-</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
-</script>
-</body>
-
-</html> });
-</script>
-</body>
-
-</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
-</script>
-</body>
-
-</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
-</script>
-</body>
-
-</html>
 
 </html>
