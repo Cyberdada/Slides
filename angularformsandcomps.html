@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Angular 2 - What, Why How ? </title>
+    <meta name="author" content="Magnus Gudmundsson">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/moon.css" id="theme">
+    <link rel="stylesheet" href="css/homegrown.css">
+
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/agate.css">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--Add support for earlier versions of Internet Explorer -->
+    <!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <!-- Wrap the entire slide show in a div using the "reveal" class. -->
+    <div class="reveal">
+        <!-- Wrap all slides in a single "slides" class -->
+        <div class="slides">
+
+            <!-- ALL SLIDES GO HERE -->
+            <!-- Each section element contains an individual slide -->
+            <section>
+                <img src="assets/angular2.png">
+                <h3>Angular - Form Components</h3>
+                <p>Magnus Gudmundsson</p>
+                <p>CyberDaDa</p>
+            </section>
+            <section id="hist1">In The Beginning... The web was full of forms...
+            </section>
+            <section id="historylesson">
+                <h3>In Angular, Forms come in two flavours</h3>
+                <p>Template Driven Forms</p>
+                <P>Reactive Forms </p>
+            </section>
+
+            <section id="comparison">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Template Driven </th>
+                            <th>Reactive</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>ngModel</td>
+                            <td>FormControl</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>ngModelGroup /ngForm</td>
+                            <td>FormGroup</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="forms2">
+                <h2>ngModel/FormControl</h2>
+                <p>They represents a single input field. It encapsulates the fields value and state</p>
+                <p>Additionaly ngModel can by tied to an underlying model, with or without a two way binding
+                    <p>
+            </section>
+
+            <section <section id="form3">
+                <h2>Control States</h2>
+                <p>NgModel /FormControl "automatically" watches for changes. Controls have values and a validation state which is determined by an optional validation function</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><strong>State</strong></th>
+                            <th><strong>Class (if True)</strong></th>
+                            <th><strong>Class (if false)</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Has been visited</td>
+                            <td>ng-touched</td>
+                            <td>ng-untouched</td>
+                        </tr>
+                        <tr>
+                            <td>Value changed</td>
+                            <td>ng-dirty</td>
+                            <td>ng-pristine</td>
+                        </tr>
+                        <tr>
+                            <td>Value valid</td>
+                            <td>ng-valid</td>
+                            <td>ng-invalid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="forms4">
+                <p>The value of an Angular form is always a JSON object</p>
+                <p>Therefore, even if you do not have an underlying datamodel</p>
+                <p>The form always has an implicit datamodel
+                    <p>
+            </section>
+
+
+            <section id="bp1">
+                <h3>Custom Forms Controls</h3>
+                <p>Why ? </p>
+            </section>
+            <section id="bp2">
+                <p>What is needed to make a Custom Form Control from an ordinary component?</p>
+            </section>
+            <section id="bp3">
+                <p>A Custom Form Control Uses an Interface</p>
+                <p>It's called the Control Value Accessor</p>
+
+            </section>
+
+            <section id="cva1">
+                <h3>Control Value Accessor - Interface</h3>
+                <p>writeValue ( value:any) {}</p>
+                <p>registerOnChange ( fn: (value:any) => void) {}</p>
+                <p>registerOnTouched ( fn: () => void): void) {}</p>
+                <p>setDisabledState ( isDisabled: boolean) {} (not required)</p>
+            </section>
+
+            <section id="writevalue">
+                <p>The writeValue will typically be called in reactive forms</p>
+                <p>When you set the formvalues in code ex:</p>
+                <pre><code class="ts">
+this.userForm.patchValue({
+	userImage: user.userImage,
+	information: {
+		nickName: user.information.nickName,
+		firstName: user.information.firstName,
+		lastName: user.information.lastName,
+		middleName: user.information.middleName,
+		email: user.information.email
+	}
+	});	
+				</code></pre>
+            </section>
+            <section id="cva2">
+                <p>You most also add the NG_VALUE_ACCESSOR as a provider</p>
+                <pre><code class="ts">@Component({
+	selector: 'app-parameters',
+	templateUrl: './parameters.component.html',
+	styleUrls: ['./parameters.component.css'],
+	providers: [
+		{   provide: NG_VALUE_ACCESSOR, 
+			useExisting: ParametersComponent, 
+			multi: true 
+		}]
+	})					
+				</code></pre>
+            </section>
+            <section id="validation1">
+                <h3>Validation</h3>
+                <p>A Custom Form Control can also implement Custom Validations</p>
+                <p>In order to do so it has to implement the Validator interface</p>
+                <p>And you need to add the NG_VALIDATOR as a provider</p>
+            </section>
+            <section id="validation2">
+                <h3>Validator interface</h3>
+                <p>validate(ctrl_ AbstractControl)</p>
+                <p>Validate function should return <b>Null</b> if valid, </p>
+                <p>Otherwise, a validation error object</p>
+                <p>The validation error object typically has a property whose name is the validation key,
+                    <p>and whose value is an arbitrary dictionary of values that you could insert into an error message.</p>
+
+            </section>
+            <section>
+                <p>A nice way to make packet sent to server smaller, check each custom control for dirtyness, if its not dirty, don't send it</p>
+                <pre><code class="ts">
+if (this.userForm.controls.information.dirty === true) {
+	user.information = this.userForm.controls.information.value;
+}
+if (this.userForm.controls.roles.dirty === true) {
+	user.roles = this.userForm.controls.roles.value;
+}
+if (this.userForm.controls.userImage.dirty === true) {
+	user.userImage = this.userForm.controls.userImage.value;
+	user.information = this.userForm.controls.information.value;
+}
+this.userService.post(user);
+		</code></pre>
+            </section>
+            <section id="demo">
+                <h1>DEMO Time !!!!!</h1>
+            </section>
+
+            <section id="otherresources">
+                <h2> Other Resources</h2>
+                <h3>General information about Angular Forms</h3>
+                <p><b>Angular.io</b> https://angular.io (of course :) look under Fundamentals/Forms) </p>
+                <p> However, when I looked, there is no information there on Custom Form Components </p>
+            </section>
+            <section id="otherresources2">
+                <h3>Info about custom components</h3>
+                <p><b> Kara Ericksons talk on Angular Connect 2017</b></p>
+                https://www.youtube.com/watch?v=ZNTsdaZiqP8&t=11164s </p>
+                <p>(it starts at ca 2:35:00) </p>
+                <b>Kara Ericksons slides about Angular Forms</b>
+                <small>https://docs.google.com/presentation/d/e/2PACX-1vTS20UdnMGqA3ecrv7ww_7CDKQM8VgdH2tbHl94aXgEsYQ2cyjq62ydU3e3ZF_BaQ64kMyQa0INe2oI/pub</small>
+                <p><b>Custom Form Controls in Angular</b></p>
+                <p>https://blog.thoughtram.io/angular/2016/07/27/custom-form-controls-in-angular-2.html</p>
+            </section>
+
+            <section id="ngVikings">
+                <img src="assets/logo-monochrome.png">
+                <p>https://ngvikings.org/ </p>
+                <p>March 1 - 2 In Helsinki, Finland </p>
+            </section>
+
+
+
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [{
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }]
+        });
+    </script>
+</body>
+
+</html> src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } }, { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } }, { src: 'plugin/highlight/highlight.js',
+async: true, callback: function() { hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
+</script>
+</body>
+
+</html> }, { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
+</script>
+</body>
+
+</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
+</script>
+</body>
+
+</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
+</script>
+</body>
+
+</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
+</script>
+</body>
+
+</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
+</script>
+</body>
+
+</html> });
+</script>
+</body>
+
+</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
+</script>
+</body>
+
+</html> hljs.initHighlightingOnLoad(); } }, { src: 'plugin/zoom-js/zoom.js', async: true }, { src: 'plugin/notes/notes.js', async: true }] });
+</script>
+</body>
+
+</html>
+
+</html>
