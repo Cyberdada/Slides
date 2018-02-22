@@ -49,13 +49,22 @@
                 <h2>Tips and tricks</h2>
             </section>
             <section id="agenda">
+                <p>Tips and t(r)icks</p>
                 <p>Kill for - become an array Ninja</p>
                 <p>Kill switch</p>
                 <p>Kill Bill ?</p>
                 <p>The startup problem</p>
-
-
             </section>
+
+            <section id="wordsofwisdom">
+                <p>Know Your Tools (in order of importance ?) </p>
+                <p>Typescript / Javascript</p>
+                <p>Angular</p>
+                <p>rxjs</p>
+                <p>Visual Studio Code addons</p>
+            </section>
+
+
 
             <section id="killfor">
                 <p> The problem: when working with arrays we constantly run into similar scenarios, such as: </p>
@@ -67,14 +76,14 @@
             </section>
             <section id="killfor">
                 <p>The solution !!!</p>
-                <p>Lets write another form loop :) !!!!</p>
+                <p>Lets write another for loop :) !!!!</p>
             </section>
             <section id="rform2">
                 <p>The problem with for loops...</p>
                 <p>The do have a strange way of growing </p>
-                <p>and become nested </p>
+                <p>And they then become nested </p>
                 <p>And in the end, nobody really knows what they do anymore</p>
-                <p>Just dont touch them / change them...</p>
+                <p>Just dont touch them / change them... they say</p>
             </section>
             <section id="killfor3">
                 <p>The Solution !!!</p>
@@ -86,101 +95,180 @@
             </section>
             <section id="forms4">
                 <p> In fact most of these functions where already around in 2011.</p>
-
             </section>
 
-            <section id="bp1">
-                <p>Problem 1. </p>
-                <p> Initialize an array with 1000 elements</p>
-                <p> Each element is a person {id: x, name: 'p'}</p>
-                <p>Id is a number, and must not be identical. </p>
-            </section>
-            <section id="bp2">
-                <p>What is needed to make a Custom Form Control from an ordinary component?</p>
-            </section>
-            <section id="bp3">
-                <p>A Custom Form Control Uses an Interface</p>
-                <p>It's called the Control Value Accessor</p>
-            </section>
+            <section id="Longlistofcoolness">
+                <h3>The functions you know</h3>
+                <table>
+                    <tr>
+                        <td><strong>concat</strong> </td>
+                        <td>copyWithin</td>
+                        <td>entries</td>
+                        <td>every</td>
+                        <td>fill</td>
+                    </tr>
+                    <tr>
+                        <td>filter</td>
+                        <td>find</td>
+                        <td>findIndex</td>
+                        <td> x flatMap </td>
+                        <td>x flatten</td>
+                    </tr>
+                    <tr>
+                        <td>forEach</td>
+                        <td>includes</td>
+                        <td>indexOf</td>
+                        <td>join</td>
+                        <td>keys</td>
+                    </tr>
+                    <tr>
 
-            <section id="cva1">
-                <h3>Control Value Accessor - Interface</h3>
-                <p>writeValue ( value:any) {} - Write value to display in view</p>
-                <p>registerOnChange ( fn: (value:any) => void) {}</p>
-                <p>registerOnTouched ( fn: () => void): void) {}</p>
-                <p>setDisabledState ( isDisabled: boolean) {} (not required)</p>
-            </section>
-            <section id="cva2">
-                <p>You most also add the NG_VALUE_ACCESSOR as a provider</p>
-                <pre><code class="ts">@Component({
-	selector: 'app-parameters',
-	templateUrl: './parameters.component.html',
-	styleUrls: ['./parameters.component.css'],
-	providers: [
-		{   provide: NG_VALUE_ACCESSOR, 
-			useExisting: ParametersComponent, 
-			multi: true 
-		}]
-	})					
-				</code></pre>
-            </section>
-            <section id="validation1">
-                <h3>Validation</h3>
-                <p>A Custom Form Control can also implement Custom Validations</p>
-                <p>In order to do so it has to implement the Validator interface</p>
-                <p>And you need to add the NG_VALIDATOR as a provider</p>
-            </section>
-            <section id="validation2">
-                <h3>Validator interface</h3>
-                <p>validate(ctrl_ AbstractControl)</p>
-                <p>Validate function should return <b>Null</b> if valid, </p>
-                <p>Otherwise, a validation error object</p>
-                <p>The validation error object typically has a property whose name is the validation key,
-                    <p>and whose value is an arbitrary dictionary of values that you could insert into an error message.</p>
+                        <td>lastIndexOf</td>
+                        <td>map</td>
+                        <td><strong>pop</strong></td>
+                        <td><strong>push</strong></td>
+                        <td>reduce</td>
+
+                    </tr>
+                    <tr>
+                        <td>reduceRight</td>
+                        <td>reverse</td>
+                        <td><strong>shift</strong></td>
+                        <td><strong>slice</strong></td>
+                        <td>some</td>
+                    </tr>
+                    <tr>
+                        <td>sort</td>
+                        <td><strong>splice</strong></td>
+                        <td>toLocaleString</td>
+                        <td>toSource</td>
+                        <td>toString</td>
+                    </tr>
+                    <tr>
+                        <td><strong>unshift</strong></td>
+                        <td>values</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
 
             </section>
-            <section>
-                <p>A nice way to make packet sent to server smaller, check each custom control for dirtyness, if its not dirty, don't send it</p>
-                <pre><code class="ts">
-if (this.userForm.controls.information.dirty === true) {
-	user.information = this.userForm.controls.information.value;
-}
-if (this.userForm.controls.roles.dirty === true) {
-	user.roles = this.userForm.controls.roles.value;
-}
-if (this.userForm.controls.userImage.dirty === true) {
-	user.userImage = this.userForm.controls.userImage.value;
-	user.information = this.userForm.controls.information.value;
-}
-this.userService.post(user);
-		</code></pre>
+            <section id="Longlistofcoolness2">
+                <h3>The functions you should know</h3>
+                <table>
+                    <tr>
+                        <td>concat </td>
+                        <td>copyWithin</td>
+                        <td>entries</td>
+                        <td><strong>every</strong></td>
+                        <td>fill</td>
+                    </tr>
+                    <tr>
+                        <td><strong>filter</strong></td>
+                        <td><strong>find</strong></td>
+                        <td><strong>findIndex</strong></td>
+                        <td> x flatMap </td>
+                        <td>x flatten</td>
+                    </tr>
+                    <tr>
+                        <td><strong>forEach</strong></td>
+                        <td><strong>includes</strong></td>
+                        <td><strong>indexOf</strong></td>
+                        <td>join</td>
+                        <td>keys</td>
+                    </tr>
+                    <tr>
+
+                        <td>lastIndexOf</td>
+                        <td><strong>map</strong></td>
+                        <td>pop</td>
+                        <td>push</td>
+                        <td><strong>reduce</strong></td>
+
+                    </tr>
+                    <tr>
+                        <td>reduceRight</td>
+                        <td>reverse</td>
+                        <td>shift</td>
+                        <td>slice</td>
+                        <td><strong>some</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>sort</strong></td>
+                        <td>splice</td>
+                        <td>toLocaleString</td>
+                        <td>toSource</td>
+                        <td>toString</td>
+                    </tr>
+                    <tr>
+                        <td>unshift</td>
+                        <td>values</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
             </section>
             <section id="demo">
                 <h1>DEMO Time !!!!!</h1>
             </section>
 
-            <section id="otherresources">
-                <h2> Other Resources</h2>
-                <h3>General information about Angular Forms</h3>
-                <p><b>Angular.io</b> https://angular.io (of course :) look under Fundamentals/Forms) </p>
-                <p> However, when I looked, there is no information there on Custom Form Components </p>
+            <section id="aarchithecture" data-background="assets/tripsticks.png">
             </section>
-            <section id="otherresources2">
-                <h3>Info about custom components</h3>
-                <p><b> Kara Ericksons talk on Angular Connect 2017</b></p>
-                https://www.youtube.com/watch?v=ZNTsdaZiqP8&t=11164s </p>
-                <p>(it starts at ca 2:35:00) </p>
-                <b>Kara Ericksons slides about Angular Forms</b>
-                <small>https://docs.google.com/presentation/d/e/2PACX-1vTS20UdnMGqA3ecrv7ww_7CDKQM8VgdH2tbHl94aXgEsYQ2cyjq62ydU3e3ZF_BaQ64kMyQa0INe2oI/pub</small>
-                <p><b>Custom Form Controls in Angular</b></p>
-                <p>https://blog.thoughtram.io/angular/2016/07/27/custom-form-controls-in-angular-2.html</p>
+            <section id="enlightment">
+                <h3>Words of wisdom</h3>
+                <p>The data that you get from the server is not holy</p>
+                <p>You might have additional needs on the client.</p>
+                <p>So feel free to spice up the data</p>
+                <p>(except maybe during Postback :) ) </p>
+                <p> Remember your friend - map</p>
             </section>
 
+            <section id="differentways">
+                <p>Find the problem</p>
+                <pre><code class="html">
+        <div *ngFor="let solution of problem?.solutions; let ix=index">
+            <p class="description">{{solution.description}}
+                <input type="radio" [name]="ix" [value]="Mode.Code" [(ngModel)]="solution.mode"> Code
+                <input type="radio" [name]="ix" [value]="Mode.Result" [(ngModel)]="solution.mode"> Result
+            </p>
+        
+            <textarea *ngIf="solution.mode === Mode.Code" class="code">{{beautify(solution.code)}} </textarea>
+            <textarea *ngIf="solution.mode === Mode.Result" class="code">{{result(ix)}} </textarea>
+            <p class="information">{{solution.information}}</p>
+        </div>
+                        </code></pre>
+            </section>
+
+
+            <section id="validation2">
+                <h3>But loops are faster (if you want to go even faster unroll the loops....) </h3>
+                <p>This had a grain of truth in it som years ago</p>
+                <p>But the Javascript machine is much faster now </p>
+                <p>If you are optimizing, check out all network calls , io stuff and dom redrawing first</p>
+                <p>In comparison with the above, all array functions are lightning fast</p>
+                <p>usually code cleanness is worth more than a couple of ms</p>
+            </section>
+
+
             <section id="helpneeded">
+                <h3> Help is always needed</h3>
                 <p>If you want to help out with the group, please reach out.</p>
+                <p>If you want to talk about something please reach out </p>
                 <p>you can always send me a message on meetup :) </p>
             </section>
 
+            <section id="amsterdamjs">
+                <p>https://amsterdamjs.com/</p>
+                <p>May 31 - June 1</p>
+                <p>CFP is open until 1 March</p>
+            </section>
+
+            </section>
             <section id="ngVikings">
                 <img src="assets/logo-monochrome.png">
                 <p>https://ngvikings.org/ </p>
